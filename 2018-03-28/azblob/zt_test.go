@@ -1608,6 +1608,8 @@ func (s *aztestsSuite) TestContainerNewBlobURL(c *chk.C) {
 	tempContainer := containerURL.URL()
 	c.Assert(tempBlob.String(), chk.Equals, tempContainer.String()+"/"+blobPrefix)
 	c.Assert(blobURL, chk.FitsTypeOf, azblob.BlobURL{})
+	// fail the test to see if CI fails properly
+	c.Assert(false, chk.Equals, true)
 }
 
 func (s *aztestsSuite) TestContainerNewBlockBlobURL(c *chk.C) {
