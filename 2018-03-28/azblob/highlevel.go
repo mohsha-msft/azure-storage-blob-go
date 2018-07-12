@@ -171,7 +171,7 @@ type DownloadFromBlobOptions struct {
 // downloadAzureFileToBuffer downloads an Azure file to a buffer with parallel.
 func downloadBlobToBuffer(ctx context.Context, blobURL BlobURL, offset int64, count int64,
 	ac BlobAccessConditions, b []byte, o DownloadFromBlobOptions,
-	initialDownloadResponse *DownloadResponse) error {
+	initialDownloadResponse *downloadResponse) error {
 	// Validate parameters, and set defaults.
 	if o.BlockSize < 0 {
 		panic("BlockSize option must be >= 0")

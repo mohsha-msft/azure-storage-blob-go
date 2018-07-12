@@ -1180,9 +1180,11 @@ func (bdr BlobDeleteResponse) Version() string {
 	return bdr.rawResponse.Header.Get("x-ms-version")
 }
 
-// BlobFlatList ...
-type BlobFlatList struct {
-	BlobItems []BlobItem `xml:"Blob"`
+// BlobFlatListSegment ...
+type BlobFlatListSegment struct {
+	// XMLName is used for marshalling and is subject to removal in a future release.
+	XMLName   xml.Name   `xml:"Blobs"`
+	BlobItems []BlobItem `xml:"BlobItems"`
 }
 
 // BlobGetPropertiesResponse ...
@@ -1434,14 +1436,18 @@ func (bgpr BlobGetPropertiesResponse) Version() string {
 	return bgpr.rawResponse.Header.Get("x-ms-version")
 }
 
-// BlobHierarchyList ...
-type BlobHierarchyList struct {
-	BlobPrefixes []BlobPrefix `xml:"BlobPrefix"`
-	BlobItems    []BlobItem   `xml:"Blob"`
+// BlobHierarchyListSegment ...
+type BlobHierarchyListSegment struct {
+	// XMLName is used for marshalling and is subject to removal in a future release.
+	XMLName      xml.Name     `xml:"Blobs"`
+	BlobPrefixes []BlobPrefix `xml:"BlobPrefixes"`
+	BlobItems    []BlobItem   `xml:"BlobItems"`
 }
 
 // BlobItem - An Azure Storage blob
 type BlobItem struct {
+	// XMLName is used for marshalling and is subject to removal in a future release.
+	XMLName    xml.Name       `xml:"Blob"`
 	Name       string         `xml:"Name"`
 	Deleted    bool           `xml:"Deleted"`
 	Snapshot   string         `xml:"Snapshot"`
@@ -1456,6 +1462,8 @@ type BlobPrefix struct {
 
 // BlobProperties - Properties of a blob
 type BlobProperties struct {
+	// XMLName is used for marshalling and is subject to removal in a future release.
+	XMLName      xml.Name  `xml:"Properties"`
 	LastModified time.Time `xml:"Last-Modified"`
 	Etag         ETag      `xml:"Etag"`
 	// ContentLength - Size in bytes
@@ -2048,72 +2056,6 @@ func (bbcblr BlockBlobCommitBlockListResponse) RequestID() string {
 // Version returns the value for header x-ms-version.
 func (bbcblr BlockBlobCommitBlockListResponse) Version() string {
 	return bbcblr.rawResponse.Header.Get("x-ms-version")
-}
-
-// BlockBlobStageBlockFromURLResponse ...
-type BlockBlobStageBlockFromURLResponse struct {
-	rawResponse *http.Response
-}
-
-// Response returns the raw HTTP response object.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) Response() *http.Response {
-	return bbsbfur.rawResponse
-}
-
-// StatusCode returns the HTTP status code of the response, e.g. 200.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) StatusCode() int {
-	return bbsbfur.rawResponse.StatusCode
-}
-
-// Status returns the HTTP status message of the response, e.g. "200 OK".
-func (bbsbfur BlockBlobStageBlockFromURLResponse) Status() string {
-	return bbsbfur.rawResponse.Status
-}
-
-// ContentMD5 returns the value for header Content-MD5.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) ContentMD5() []byte {
-	s := bbsbfur.rawResponse.Header.Get("Content-MD5")
-	if s == "" {
-		return nil
-	}
-	b, err := base64.StdEncoding.DecodeString(s)
-	if err != nil {
-		panic(err)
-	}
-	return b
-}
-
-// Date returns the value for header Date.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) Date() time.Time {
-	s := bbsbfur.rawResponse.Header.Get("Date")
-	if s == "" {
-		return time.Time{}
-	}
-	t, err := time.Parse(time.RFC1123, s)
-	if err != nil {
-		panic(err)
-	}
-	return t
-}
-
-// ErrorCode returns the value for header x-ms-error-code.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) ErrorCode() string {
-	return bbsbfur.rawResponse.Header.Get("x-ms-error-code")
-}
-
-// IsServerEncrypted returns the value for header x-ms-request-server-encrypted.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) IsServerEncrypted() string {
-	return bbsbfur.rawResponse.Header.Get("x-ms-request-server-encrypted")
-}
-
-// RequestID returns the value for header x-ms-request-id.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) RequestID() string {
-	return bbsbfur.rawResponse.Header.Get("x-ms-request-id")
-}
-
-// Version returns the value for header x-ms-version.
-func (bbsbfur BlockBlobStageBlockFromURLResponse) Version() string {
-	return bbsbfur.rawResponse.Header.Get("x-ms-version")
 }
 
 // BlockBlobStageBlockResponse ...
@@ -2803,6 +2745,8 @@ func (cgpr ContainerGetPropertiesResponse) Version() string {
 
 // ContainerItem - An Azure Storage container
 type ContainerItem struct {
+	// XMLName is used for marshalling and is subject to removal in a future release.
+	XMLName    xml.Name            `xml:"Container"`
 	Name       string              `xml:"Name"`
 	Properties ContainerProperties `xml:"Properties"`
 	Metadata   Metadata            `xml:"Metadata"`
@@ -3373,7 +3317,7 @@ func (dr downloadResponse) Version() string {
 	return dr.rawResponse.Header.Get("x-ms-version")
 }
 
-// GeoReplication ...
+// GeoReplication - Geo-Replication information for the Secondary Storage Service
 type GeoReplication struct {
 	// Status - The status of the secondary location. Possible values include: 'GeoReplicationStatusLive', 'GeoReplicationStatusBootstrap', 'GeoReplicationStatusUnavailable', 'GeoReplicationStatusNone'
 	Status GeoReplicationStatusType `xml:"Status"`
@@ -3403,15 +3347,15 @@ func (gr *GeoReplication) UnmarshalXML(d *xml.Decoder, start xml.StartElement) e
 type ListBlobsFlatSegmentResponse struct {
 	rawResponse *http.Response
 	// XMLName is used for marshalling and is subject to removal in a future release.
-	XMLName         xml.Name     `xml:"EnumerationResults"`
-	ServiceEndpoint string       `xml:"ServiceEndpoint,attr"`
-	ContainerName   string       `xml:"ContainerName,attr"`
-	Prefix          string       `xml:"Prefix"`
-	Marker          string       `xml:"Marker"`
-	MaxResults      int32        `xml:"MaxResults"`
-	Delimiter       string       `xml:"Delimiter"`
-	Segment         BlobFlatList `xml:"Blobs"`
-	NextMarker      Marker       `xml:"NextMarker"`
+	XMLName         xml.Name             `xml:"EnumerationResults"`
+	ServiceEndpoint string               `xml:"ServiceEndpoint,attr"`
+	ContainerName   string               `xml:"ContainerName,attr"`
+	Prefix          string               `xml:"Prefix"`
+	Marker          string               `xml:"Marker"`
+	MaxResults      int32                `xml:"MaxResults"`
+	Delimiter       string               `xml:"Delimiter"`
+	Segment         *BlobFlatListSegment `xml:"Segment"`
+	NextMarker      Marker               `xml:"NextMarker"`
 }
 
 // Response returns the raw HTTP response object.
@@ -3466,15 +3410,15 @@ func (lbfsr ListBlobsFlatSegmentResponse) Version() string {
 type ListBlobsHierarchySegmentResponse struct {
 	rawResponse *http.Response
 	// XMLName is used for marshalling and is subject to removal in a future release.
-	XMLName         xml.Name          `xml:"EnumerationResults"`
-	ServiceEndpoint string            `xml:"ServiceEndpoint,attr"`
-	ContainerName   string            `xml:"ContainerName,attr"`
-	Prefix          string            `xml:"Prefix"`
-	Marker          string            `xml:"Marker"`
-	MaxResults      int32             `xml:"MaxResults"`
-	Delimiter       string            `xml:"Delimiter"`
-	Segment         BlobHierarchyList `xml:"Blobs"`
-	NextMarker      Marker            `xml:"NextMarker"`
+	XMLName         xml.Name                  `xml:"EnumerationResults"`
+	ServiceEndpoint string                    `xml:"ServiceEndpoint,attr"`
+	ContainerName   string                    `xml:"ContainerName,attr"`
+	Prefix          string                    `xml:"Prefix"`
+	Marker          string                    `xml:"Marker"`
+	MaxResults      int32                     `xml:"MaxResults"`
+	Delimiter       string                    `xml:"Delimiter"`
+	Segment         *BlobHierarchyListSegment `xml:"Segment"`
+	NextMarker      Marker                    `xml:"NextMarker"`
 }
 
 // Response returns the raw HTTP response object.
@@ -3525,8 +3469,8 @@ func (lbhsr ListBlobsHierarchySegmentResponse) Version() string {
 	return lbhsr.rawResponse.Header.Get("x-ms-version")
 }
 
-// ListContainersResponse - An enumeration of containers
-type ListContainersResponse struct {
+// ListContainersSegmentResponse - An enumeration of containers
+type ListContainersSegmentResponse struct {
 	rawResponse *http.Response
 	// XMLName is used for marshalling and is subject to removal in a future release.
 	XMLName         xml.Name        `xml:"EnumerationResults"`
@@ -3539,33 +3483,33 @@ type ListContainersResponse struct {
 }
 
 // Response returns the raw HTTP response object.
-func (lcr ListContainersResponse) Response() *http.Response {
-	return lcr.rawResponse
+func (lcsr ListContainersSegmentResponse) Response() *http.Response {
+	return lcsr.rawResponse
 }
 
 // StatusCode returns the HTTP status code of the response, e.g. 200.
-func (lcr ListContainersResponse) StatusCode() int {
-	return lcr.rawResponse.StatusCode
+func (lcsr ListContainersSegmentResponse) StatusCode() int {
+	return lcsr.rawResponse.StatusCode
 }
 
 // Status returns the HTTP status message of the response, e.g. "200 OK".
-func (lcr ListContainersResponse) Status() string {
-	return lcr.rawResponse.Status
+func (lcsr ListContainersSegmentResponse) Status() string {
+	return lcsr.rawResponse.Status
 }
 
 // ErrorCode returns the value for header x-ms-error-code.
-func (lcr ListContainersResponse) ErrorCode() string {
-	return lcr.rawResponse.Header.Get("x-ms-error-code")
+func (lcsr ListContainersSegmentResponse) ErrorCode() string {
+	return lcsr.rawResponse.Header.Get("x-ms-error-code")
 }
 
 // RequestID returns the value for header x-ms-request-id.
-func (lcr ListContainersResponse) RequestID() string {
-	return lcr.rawResponse.Header.Get("x-ms-request-id")
+func (lcsr ListContainersSegmentResponse) RequestID() string {
+	return lcsr.rawResponse.Header.Get("x-ms-request-id")
 }
 
 // Version returns the value for header x-ms-version.
-func (lcr ListContainersResponse) Version() string {
-	return lcr.rawResponse.Header.Get("x-ms-version")
+func (lcsr ListContainersSegmentResponse) Version() string {
+	return lcsr.rawResponse.Header.Get("x-ms-version")
 }
 
 // Logging - Azure Analytics Logging settings.
@@ -3581,7 +3525,7 @@ type Logging struct {
 	RetentionPolicy RetentionPolicy `xml:"RetentionPolicy"`
 }
 
-// Metrics ...
+// Metrics - a summary of request statistics grouped by API in hour or minute aggregates for blobs
 type Metrics struct {
 	// Version - The version of Storage Analytics to configure.
 	Version *string `xml:"Version"`
@@ -4186,7 +4130,7 @@ type PageRange struct {
 	End   int64 `xml:"End"`
 }
 
-// RetentionPolicy - the retention policy
+// RetentionPolicy - the retention policy which determines how long the associated data should persist
 type RetentionPolicy struct {
 	// Enabled - Indicates whether a retention policy is enabled for the storage service
 	Enabled bool `xml:"Enabled"`
@@ -4232,8 +4176,7 @@ func (sspr ServiceSetPropertiesResponse) Version() string {
 // SignedIdentifier - signed identifier
 type SignedIdentifier struct {
 	// ID - a unique id
-	ID string `xml:"Id"`
-	// AccessPolicy - The access policy
+	ID           string       `xml:"Id"`
 	AccessPolicy AccessPolicy `xml:"AccessPolicy"`
 }
 
@@ -4311,18 +4254,14 @@ func (si SignedIdentifiers) Version() string {
 
 // StorageServiceProperties - Storage Service Properties.
 type StorageServiceProperties struct {
-	rawResponse *http.Response
-	// Logging - Azure Analytics Logging settings
-	Logging *Logging `xml:"Logging"`
-	// HourMetrics - A summary of request statistics grouped by API in hourly aggregates for blobs
-	HourMetrics *Metrics `xml:"HourMetrics"`
-	// MinuteMetrics - a summary of request statistics grouped by API in minute aggregates for blobs
+	rawResponse   *http.Response
+	Logging       *Logging `xml:"Logging"`
+	HourMetrics   *Metrics `xml:"HourMetrics"`
 	MinuteMetrics *Metrics `xml:"MinuteMetrics"`
 	// Cors - The set of CORS rules.
 	Cors []CorsRule `xml:"Cors>CorsRule"`
 	// DefaultServiceVersion - The default version to use for requests to the Blob service if an incoming request's version is not specified. Possible values include version 2008-10-27 and all more recent versions
-	DefaultServiceVersion *string `xml:"DefaultServiceVersion"`
-	// DeleteRetentionPolicy - The Delete Retention Policy for the service
+	DefaultServiceVersion *string          `xml:"DefaultServiceVersion"`
 	DeleteRetentionPolicy *RetentionPolicy `xml:"DeleteRetentionPolicy"`
 }
 
@@ -4358,8 +4297,7 @@ func (ssp StorageServiceProperties) Version() string {
 
 // StorageServiceStats - Stats for the storage service.
 type StorageServiceStats struct {
-	rawResponse *http.Response
-	// GeoReplication - Geo-Replication information for the Secondary Storage Service
+	rawResponse    *http.Response
 	GeoReplication *GeoReplication `xml:"GeoReplication"`
 }
 
@@ -4454,6 +4392,8 @@ type accessPolicy struct {
 
 // internal type used for marshalling
 type blobProperties struct {
+	// XMLName is used for marshalling and is subject to removal in a future release.
+	XMLName                xml.Name          `xml:"Properties"`
 	LastModified           timeRFC1123       `xml:"Last-Modified"`
 	Etag                   ETag              `xml:"Etag"`
 	ContentLength          *int64            `xml:"Content-Length"`

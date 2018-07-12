@@ -74,14 +74,6 @@ func (bb BlockBlobURL) StageBlock(ctx context.Context, base64BlockID string, bod
 	return bb.bbClient.StageBlock(ctx, base64BlockID, validateSeekableStreamAt0AndGetCount(body), body, nil, ac.pointers(), nil)
 }
 
-// StageBlockFromURL copies the specified block from a source URL to the block blob's "staging area" to be later committed by a call to CommitBlockList.
-// If count is CountToEnd (0), then data is read from specified offset to the end.
-// For more information, see https://docs.microsoft.com/en-us/rest/api/storageservices/put-block-from-url.
-func (bb BlockBlobURL) StageBlockFromURL(ctx context.Context, base64BlockID string, sourceURL url.URL, offset int64, count int64, ac LeaseAccessConditions) (*BlockBlobStageBlockFromURLResponse, error) {
-	sourceURLStr := sourceURL.String()
-	return bb.bbClient.StageBlockFromURL(ctx, base64BlockID, 0, &sourceURLStr, httpRange{offset: offset, count: count}.pointers(), nil, nil, ac.pointers(), nil)
-}
-
 // CommitBlockList writes a blob by specifying the list of block IDs that make up the blob.
 // In order to be written as part of a blob, a block must have been successfully written
 // to the server in a prior PutBlock operation. You can call PutBlockList to update a blob
