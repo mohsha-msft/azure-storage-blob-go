@@ -109,3 +109,9 @@ func (e *storageError) UnmarshalXML(d *xml.Decoder, start xml.StartElement) (err
 	}
 	return nil
 }
+
+func validateError(err interface{}) {
+	if err != nil {
+		panic(err)
+	}
+}

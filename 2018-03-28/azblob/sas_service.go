@@ -29,16 +29,14 @@ type BlobSASSignatureValues struct {
 // the proper SAS query parameters.
 func (v BlobSASSignatureValues) NewSASQueryParameters(sharedKeyCredential *SharedKeyCredential) SASQueryParameters {
 	if sharedKeyCredential == nil {
-		panic("sharedKeyCredential can't be nil")
+		validateError("sharedKeyCredential can't be nil")
 	}
 
 	resource := "c"
 	if v.BlobName == "" {
 		// Make sure the permission characters are in the correct order
 		perms := &ContainerSASPermissions{}
-		if err := perms.Parse(v.Permissions); err != nil {
-			panic(err)
-		}
+		validateError(perms.Parse(v.Permissions))
 		v.Permissions = perms.String()
 	} else {
 		resource = "b"
