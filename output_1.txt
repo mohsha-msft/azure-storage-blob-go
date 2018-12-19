@@ -1,0 +1,247 @@
+2018/12/18 23:19:15.755822 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [9ad6dc39-c163-4275-65fe-cfd1f1efa575]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:19:16.343105 ==> REQUEST/RESPONSE (Try=1/587.051367ms, OpTime=587.430159ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [9ad6dc39-c163-4275-65fe-cfd1f1efa575]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:19:15 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [7a7aa816-001e-0007-066b-9739ae000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:19:16-08:00 Started reading body
+>>>>>>>>> 2018-12-18T23:19:18-08:00 Closed body reader for the 0th time
+<<<<<<<<< 2018-12-18T23:19:18-08:00 inner error occurred: read tcp 192.168.0.176:53417->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:19:18-08:00 inner error triggered retry: read tcp 192.168.0.176:53417->52.239.162.164:443: use of closed network connection
+2018/12/18 23:19:18.347957 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [5a26d495-e9f4-431b-59c3-812b60401821]
+   X-Ms-Range: [bytes=20971520-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:19:18.589429 ==> REQUEST/RESPONSE (Try=1/241.293391ms, OpTime=241.404517ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [5a26d495-e9f4-431b-59c3-812b60401821]
+   X-Ms-Range: [bytes=20971520-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [375365015]
+   Content-Range: [bytes 20971520-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:19:18 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [3b74c941-b01e-001e-346b-9715c6000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:19:21-08:00 Closed body reader for the 1th time
+<<<<<<<<< 2018-12-18T23:19:21-08:00 inner error occurred: read tcp 192.168.0.176:53420->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:19:21-08:00 inner error triggered retry: read tcp 192.168.0.176:53420->52.239.162.164:443: use of closed network connection
+2018/12/18 23:19:21.348887 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [08be1f1f-b9f2-445b-64bb-af8f95547bd6]
+   X-Ms-Range: [bytes=49430528-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:19:21.649131 ==> REQUEST/RESPONSE (Try=1/300.157607ms, OpTime=300.268257ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [08be1f1f-b9f2-445b-64bb-af8f95547bd6]
+   X-Ms-Range: [bytes=49430528-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [346906007]
+   Content-Range: [bytes 49430528-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:19:21 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [719ef129-f01e-0012-6b6b-97fb37000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:19:25-08:00 Closed body reader for the 2th time
+<<<<<<<<< 2018-12-18T23:19:25-08:00 inner error occurred: read tcp 192.168.0.176:53421->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:19:25-08:00 inner error triggered retry: read tcp 192.168.0.176:53421->52.239.162.164:443: use of closed network connection
+2018/12/18 23:19:25.349221 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [12621f8d-6e90-4018-7042-0a4ece0937c5]
+   X-Ms-Range: [bytes=85721088-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:19:25.575298 ==> REQUEST/RESPONSE (Try=1/225.98277ms, OpTime=226.065628ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [12621f8d-6e90-4018-7042-0a4ece0937c5]
+   X-Ms-Range: [bytes=85721088-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [310615447]
+   Content-Range: [bytes 85721088-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:19:24 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [7f8c4ab2-e01e-0006-606b-973853000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:19:30-08:00 Closed body reader for the 3th time
+<<<<<<<<< 2018-12-18T23:19:30-08:00 inner error occurred: read tcp 192.168.0.176:53422->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:19:30-08:00 inner error triggered retry: read tcp 192.168.0.176:53422->52.239.162.164:443: use of closed network connection
+2018/12/18 23:19:30.351143 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [8752638b-a386-4d40-75f6-4a6c6c885d39]
+   X-Ms-Range: [bytes=136183808-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:19:30.622253 ==> REQUEST/RESPONSE (Try=1/271.030725ms, OpTime=271.110065ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [8752638b-a386-4d40-75f6-4a6c6c885d39]
+   X-Ms-Range: [bytes=136183808-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [260152727]
+   Content-Range: [bytes 136183808-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:19:29 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [459b5bd5-401e-0022-066b-97a11d000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:19:36-08:00 Closed body reader for the 4th time
+<<<<<<<<< 2018-12-18T23:19:36-08:00 inner error occurred: read tcp 192.168.0.176:53423->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:19:36-08:00 inner error triggered retry: read tcp 192.168.0.176:53423->52.239.162.164:443: use of closed network connection
+2018/12/18 23:19:36.351601 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [75355695-07bb-4b1c-7c26-ab0f5a13d35e]
+   X-Ms-Range: [bytes=175390720-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:19:36.557447 ==> REQUEST/RESPONSE (Try=1/205.775581ms, OpTime=205.895192ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [75355695-07bb-4b1c-7c26-ab0f5a13d35e]
+   X-Ms-Range: [bytes=175390720-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [220945815]
+   Content-Range: [bytes 175390720-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:19:35 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [d6db39bf-901e-0020-6b6b-97a3e7000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:19:43-08:00 Closed body reader for the 5th time
+<<<<<<<<< 2018-12-18T23:19:43-08:00 inner error occurred: read tcp 192.168.0.176:53424->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:19:43-08:00 inner error triggered retry: read tcp 192.168.0.176:53424->52.239.162.164:443: use of closed network connection
+2018/12/18 23:19:43.352502 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [70b27fcb-ac1c-464d-6441-67f6bebde438]
+   X-Ms-Range: [bytes=251117568-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:19:43.646007 ==> REQUEST/RESPONSE (Try=1/293.411767ms, OpTime=293.526484ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [70b27fcb-ac1c-464d-6441-67f6bebde438]
+   X-Ms-Range: [bytes=251117568-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [145218967]
+   Content-Range: [bytes 251117568-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:19:42 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [012a2d92-701e-0047-1a6b-971040000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:19:57-08:00 Stopped reading body
+>>>>>>>>> 396336535 bytes were read, %!s(<nil>) error was raised

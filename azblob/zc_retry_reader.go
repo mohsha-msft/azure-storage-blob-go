@@ -2,9 +2,11 @@ package azblob
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"net"
 	"net/http"
+	"time"
 )
 
 const CountToEnd = 0
@@ -92,17 +94,27 @@ func (s *retryReader) Read(p []byte) (n int, err error) {
 		s.Close()        // Error, close stream
 		s.response = nil // Our stream is no longer good
 
+		output(fmt.Sprintf("%s inner error occurred: %s after reading %v bytes", time.Now().Format(time.RFC3339), err, n))
 		// Check the retry count and error code, and decide whether to retry.
 		if try >= s.o.MaxRetryRequests {
+			output(fmt.Sprintf("%s inner error exhausted retries: %s", time.Now().Format(time.RFC3339), err))
 			return n, err // All retries exhausted
 		}
 
 		if _, ok := err.(net.Error); ok {
+			output(fmt.Sprintf("%s inner error triggered retry: %s", time.Now().Format(time.RFC3339), err))
 			continue
 			// Loop around and try to get and read from new stream.
 		}
+		output(fmt.Sprintf("%s inner error cannot be retried: %s", time.Now().Format(time.RFC3339), err))
 		return n, err // Not retryable, just return
 	}
+}
+
+const outputPrefix = "<<<<<<<<<"
+
+func output(msg string) {
+	fmt.Printf("%s %s\n", outputPrefix, msg)
 }
 
 func (s *retryReader) Close() error {

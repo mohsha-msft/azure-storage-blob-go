@@ -1,0 +1,111 @@
+2018/12/18 23:17:46.739616 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [f50b29c7-e4cf-42dc-562a-5bfd6a6adb1e]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:17:47.242463 ==> REQUEST/RESPONSE (Try=1/502.625087ms, OpTime=503.061732ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [f50b29c7-e4cf-42dc-562a-5bfd6a6adb1e]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 200 OK
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:17:46 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [c02c98d7-d01e-0041-2e6a-97e738000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:17:47-08:00 Started reading body
+>>>>>>>>> 2018-12-18T23:17:49-08:00 Closed body reader for the 0th time
+<<<<<<<<< 2018-12-18T23:17:49-08:00 inner error occurred: read tcp 192.168.0.176:53390->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:17:49-08:00 inner error triggered retry: read tcp 192.168.0.176:53390->52.239.162.164:443: use of closed network connection
+2018/12/18 23:17:49.247675 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [9642ad48-a652-4d8c-7dba-3853aa99f213]
+   X-Ms-Range: [bytes=19300352-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:17:49.524347 ==> REQUEST/RESPONSE (Try=1/276.558158ms, OpTime=276.626946ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [9642ad48-a652-4d8c-7dba-3853aa99f213]
+   X-Ms-Range: [bytes=19300352-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [377036183]
+   Content-Range: [bytes 19300352-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:17:49 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [567db02e-d01e-002c-7c6a-974d16000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:17:52-08:00 Closed body reader for the 1th time
+<<<<<<<<< 2018-12-18T23:17:52-08:00 inner error occurred: read tcp 192.168.0.176:53391->52.239.162.164:443: use of closed network connection after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:17:52-08:00 inner error triggered retry: read tcp 192.168.0.176:53391->52.239.162.164:443: use of closed network connection
+2018/12/18 23:17:52.249781 ==> OUTGOING REQUEST (Try=1)
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [137c9cd5-c0fc-4dae-5513-fa5a0973018b]
+   X-Ms-Range: [bytes=40779776-]
+   X-Ms-Version: [2018-03-28]
+2018/12/18 23:17:52.534535 ==> REQUEST/RESPONSE (Try=1/284.639494ms, OpTime=284.721003ms) -- RESPONSE SUCCESSFULLY RECEIVED
+   GET https://zemaintest.blob.core.windows.net/test/pycharm-professional-2018.3.dmg?se=2019-12-20t01%3A22%3A00z&sig=REDACTED&sp=rl&sr=b&st=2018-12-19t01%3A22%3A42z&sv=2018-03-28&timeout=180001
+   If-Match: ["0x8D665524557BAF2"]
+   User-Agent: [Azure-Storage/0.3 (go1.11; darwin)]
+   X-Ms-Client-Request-Id: [137c9cd5-c0fc-4dae-5513-fa5a0973018b]
+   X-Ms-Range: [bytes=40779776-]
+   X-Ms-Version: [2018-03-28]
+   --------------------------------------------------------------------------------
+   RESPONSE Status: 206 Partial Content
+   Accept-Ranges: [bytes]
+   Content-Disposition: []
+   Content-Length: [355556759]
+   Content-Range: [bytes 40779776-396336534/396336535]
+   Content-Type: [application/x-apple-diskimage]
+   Date: [Wed, 19 Dec 2018 07:17:52 GMT]
+   Etag: ["0x8D665524557BAF2"]
+   Last-Modified: [Wed, 19 Dec 2018 01:35:34 GMT]
+   Server: [Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0]
+   Vary: [Origin]
+   X-Ms-Blob-Type: [BlockBlob]
+   X-Ms-Creation-Time: [Wed, 19 Dec 2018 01:35:34 GMT]
+   X-Ms-Lease-State: [available]
+   X-Ms-Lease-Status: [unlocked]
+   X-Ms-Request-Id: [6429a62d-201e-0054-406a-9725a1000000]
+   X-Ms-Server-Encrypted: [true]
+   X-Ms-Version: [2018-03-28]
+>>>>>>>>> 2018-12-18T23:17:56-08:00 Closed body reader for the 2th time
+<<<<<<<<< 2018-12-18T23:17:56-08:00 inner error occurred: http: read on closed response body after reading 0 bytes
+<<<<<<<<< 2018-12-18T23:17:56-08:00 inner error cannot be retried: http: read on closed response body
+>>>>>>>>> 2018-12-18T23:17:56-08:00 Stopped reading body
+>>>>>>>>> 78790656 bytes were read, http: read on closed response body error was raised
+>>>>>>>>> 2018-12-18T23:18:01-08:00 Closed body reader for the 3th time
+>>>>>>>>> 2018-12-18T23:18:07-08:00 Closed body reader for the 4th time
+>>>>>>>>> 2018-12-18T23:18:14-08:00 Closed body reader for the 5th time
+
+Process finished with exit code 0
